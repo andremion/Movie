@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".app.movie.detail.MovieActivity"
+    tools:showIn="@layout/activity_movie"
+    tools:targetApi="lollipop">
+
+    <data>
+
+        <import type="android.text.Html" />
+
+        <variable
+            name="viewModel"
+            type="com.andremion.movie.app.movie.detail.MovieDetailViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:fillViewport="true"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:behavior_overlapTop="@dimen/appbar_overlap"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_main"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginTop="@dimen/movie_detail_card_main_margin_top"
+            android:transitionName="@{@string/movie_card_transition + viewModel.data.id}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_poster"
+            android:layout_width="@dimen/movie_detail_image_size"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:background="@android:color/darker_gray"
+            android:cropToPadding="true"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:scaleType="centerCrop"
+            android:transitionName="@{@string/movie_image_transition + viewModel.data.id}"
+            app:layout_constraintDimensionRatio="W,4:3"
+            app:layout_constraintStart_toStartOf="@+id/card_main"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadUrl="@{viewModel.data.poster}"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_votes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/text_margin"
+            android:layout_marginRight="@dimen/text_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:transitionGroup="true"
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardElevation="@dimen/design_appbar_elevation"
+            app:layout_constraintEnd_toEndOf="@+id/card_main"
+            app:layout_constraintTop_toTopOf="@+id/image_poster"
+            tools:ignore="PrivateResource">
+
+            <TextView
+                android:id="@+id/text_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:maxLines="1"
+                android:text="@{viewModel.data.voteAverage}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="?android:textColorPrimaryInverse"
+                tools:text="@tools:sample/us_zipcodes" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:maxLines="2"
+            android:text="@{viewModel.data.title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:transitionName="@{@string/movie_title_transition + viewModel.data.id}"
+            app:layout_constraintEnd_toEndOf="@+id/card_main"
+            app:layout_constraintStart_toEndOf="@+id/image_poster"
+            app:layout_constraintTop_toBottomOf="@+id/card_votes"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/text_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:maxLines="1"
+            android:text="@{viewModel.data.release}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:transitionName="@{@string/movie_release_transition + viewModel.data.id}"
+            app:layout_constraintStart_toEndOf="@+id/image_poster"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/text_runtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:text="@{Html.fromHtml(@string/movie_detail_runtime + viewModel.data.runtime)}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toEndOf="@+id/image_poster"
+            app:layout_constraintTop_toBottomOf="@+id/text_release"
+            tools:text="@tools:sample/us_zipcodes" />
+
+        <TextView
+            android:id="@+id/text_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:text="@{Html.fromHtml(@string/movie_detail_revenue + viewModel.data.revenue)}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintStart_toEndOf="@+id/text_runtime"
+            app:layout_constraintTop_toTopOf="@+id/text_runtime"
+            tools:text="@tools:sample/us_phones" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/content_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/text_margin"
+            android:elevation="@dimen/cardview_default_elevation"
+            app:layout_constraintBottom_toBottomOf="@+id/card_main"
+            app:layout_constraintEnd_toEndOf="@+id/card_main"
+            app:layout_constraintStart_toStartOf="@+id/card_main"
+            app:layout_constraintTop_toBottomOf="@+id/text_revenue">
+
+            <TextView
+                android:id="@+id/text_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.data.overview}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:transitionName="@{@string/movie_overview_transition + viewModel.data.id}"
+                tools:text="@tools:sample/lorem/random" />
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

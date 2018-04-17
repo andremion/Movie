@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="sequential">
+
+    <transitionSet>
+        <slide android:slideEdge="end">
+            <targets>
+                <target android:targetId="@id/card_votes" />
+                <target android:targetId="@id/text_runtime" />
+                <target android:targetId="@id/text_revenue" />
+            </targets>
+        </slide>
+        <slide android:slideEdge="bottom">
+            <targets>
+                <target android:targetId="@id/content_layout" />
+            </targets>
+        </slide>
+    </transitionSet>
+    <slide android:slideEdge="top">
+        <targets>
+            <target android:targetId="@id/appbar" />
+        </targets>
+    </slide>
+
+</transitionSet>

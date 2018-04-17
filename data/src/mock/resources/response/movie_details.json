@@ -1,0 +1,80 @@
+{
+  "adult": false,
+  "backdrop_path": "/ZQixhAZx6fH1VNafFXsqa1B8QI.jpg",
+  "belongs_to_collection": {
+    "id": 131292,
+    "name": "Iron Man Collection",
+    "poster_path": "/fbeJ7f0aD4A112Bc1tnpzyn82xO.jpg",
+    "backdrop_path": "/rI8zOWkRQJdlAyQ6WJOSlYK6JxZ.jpg"
+  },
+  "budget": 140000000,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 878,
+      "name": "Science Fiction"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    }
+  ],
+  "homepage": "http://www.ironmanmovie.com/",
+  "id": 1726,
+  "imdb_id": "tt0371746",
+  "original_language": "en",
+  "original_title": "Iron Man",
+  "overview": "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.",
+  "popularity": 47.029388,
+  "poster_path": "/848chlIWVT41VtAAgyh9bWymAYb.jpg",
+  "production_companies": [
+    {
+      "id": 4,
+      "logo_path": "/fycMZt242LVjagMByZOLUGbCvv3.png",
+      "name": "Paramount",
+      "origin_country": "US"
+    },
+    {
+      "id": 420,
+      "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+      "name": "Marvel Studios",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2008-04-30",
+  "revenue": 585174222,
+  "runtime": 126,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "fa",
+      "name": "فارسی"
+    },
+    {
+      "iso_639_1": "ur",
+      "name": "اردو"
+    },
+    {
+      "iso_639_1": "ar",
+      "name": "العربية"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Heroes aren't born. They're built.",
+  "title": "Iron Man",
+  "video": false,
+  "vote_average": 7.4,
+  "vote_count": 11041
+}

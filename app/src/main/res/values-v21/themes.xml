@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar.TranslucentStatusBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.Movie" parent="AppTheme.NoActionBar.TranslucentStatusBar">
+        <item name="android:windowSharedElementsUseOverlay">false</item>
+        <item name="android:windowEnterTransition">@transition/movie_detail_enter</item>
+        <item name="android:windowReturnTransition">@transition/movie_detail_return</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/movie_shared_element_return</item>
+    </style>
+
+</resources>

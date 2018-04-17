@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Movie</string>
+
+    <string name="search_hint">Search…</string>
+    <string name="movie_detail_runtime"><![CDATA[ <b>Runtime </b><br /> ]]></string>
+    <string name="movie_detail_revenue"><![CDATA[ <b>Revenue </b><br /> ]]></string>
+
+    <!--Warning/Error Messages-->
+    <string name="empty_icon" translatable="false">¯\\_(ツ)_/¯</string>
+    <string name="movie_list_empty">Sorry, we couldn\'t find any movie.\n\nPlease try with another query.</string>
+</resources>
